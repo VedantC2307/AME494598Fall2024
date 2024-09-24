@@ -2,4 +2,5 @@
 
 # Image
 
-![Robot Image](./Thumbnail.png)
+<img src="./Thumbnail.png" alt="Watch Image" width="400" height="300">
+
