@@ -2,5 +2,5 @@
 
 # Image
 
-<img src="./Thumbnail.png" alt="Watch Image" height="600">
+<img src="./Thumbnail.png" alt="Watch Image" height="500">
 
