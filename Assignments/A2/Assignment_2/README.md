@@ -2,4 +2,5 @@
 
 # Image
 
-![Robot Image](AME494598Fall2024\Assignments\A2\Assignment_2\Thumbnail.png)
+<img src="./Thumbnail.png" alt="Watch Image" height="500">
+
