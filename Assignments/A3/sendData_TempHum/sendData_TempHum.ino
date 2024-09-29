@@ -81,8 +81,6 @@ void setup() {
  
   Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
 
-
-
 }
 
 void loop() {
@@ -90,7 +88,6 @@ void loop() {
   Serial.println("=================================");
   Serial.println("Sample DHT11...");
  
-
   // read without samples.
   byte temperature = 0;
   byte humidity = 0;
@@ -113,8 +110,6 @@ void loop() {
       Serial.println(url);       
       response = httpGETRequest(url.c_str());
       Serial.println(response);
-
-
 
   // DHT11 sampling rate is 1HZ.
   delay(6500);
