@@ -16,20 +16,31 @@ This assignment covers the following tasks:
 - **Code:**
   - The provided code for the TTGO watch reads temperature and humidity values from the DHT11 sensor using the SimpleDHT11 library 
   - The Arduino code is available in the repository: [sendData_TempHum.ino](https://github.com/VedantC2307/AME494598Fall2024/tree/main/Assignments/A3/sendData_TempHum/sendData_TempHum.ino).
-  - Upload and run the ESP32 code.
-  - The ESP32 code sends the sensor data over HTTP to the server hosted on the EC2 instance
+  - Upload and run the code.
+  - The ESP32 code sends the sensor data over HTTP to the server hosted on the EC2 instance.
   
 ### 2. Configuring the EC2 Server to Receive Data
-- The AWS EC2 instance is set up to receive HTTP requests.
-- **Steps:**
   1. Open the Sandbox Environment on Canvas.
   2. Start Lab and then click on the AWS button when it turns green.
-  ![Canvas](path/to/your/image.png)
   3. Create a new EC2 instace.
-  ![Robot Overview](path/to/your/image.png)
-  4. Configure the EC2 security group to allow incoming HTTP traffic on the required port.
+  ![EC2 Instance](create_instance.png)
+  4. Configure the EC2 security group inbound rule settings to allow incoming HTTP traffic on the required port.
+  ![Security group](inbound_rules.png)
   5. Install nodejs and other neccessary libraries
+  ```bash
+  sudo apt install update && sudo apt install upgrade
+  sudo apt install node
+  ```
   6. Run the HTTP server code to receive data from the ESP32
+  ```bash
+  node server.js
+  ```
+  ![EC2 Instance Terminal Output](EC2_output.png)
+  7. Output in the arduino serial monitor when it is successfully sending.
+  ![Arduino Output](EC2_output.png)
+  8. Output on the internet.
+  ![](web.png)
+
 
 ## How to Run the Project
 1. Connect the DHT11 sensor to the ESP32 as per the wiring instructions.
