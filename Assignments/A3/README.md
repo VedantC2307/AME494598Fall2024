@@ -28,7 +28,7 @@ This assignment covers the following tasks:
   4. Configure the EC2 security group inbound rule settings to allow incoming HTTP traffic on the required port.
 
   ![Security group](inbound_rules.png)
-  
+
   5. Connect to the instance.
   6. Install nodejs and other neccessary libraries for execution
 
@@ -66,3 +66,6 @@ This assignment covers the following tasks:
 7. Output on the internet.
 ![](web.png)
 
+
+
+![Final Output](final_output.png) 
