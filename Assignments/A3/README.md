@@ -31,16 +31,6 @@ This assignment covers the following tasks:
   sudo apt install update && sudo apt install upgrade
   sudo apt install node
   ```
-  6. Run the HTTP server code to receive data from the ESP32
-  ```bash
-  node server.js
-  ```
-  ![EC2 Instance Terminal Output](EC2_output.png)
-  7. Output in the arduino serial monitor when it is successfully sending.
-  ![Arduino Output](EC2_output.png)
-  8. Output on the internet.
-  ![](web.png)
-
 
 ## How to Run the Project
 1. Connect the DHT11 sensor to the ESP32 as per the wiring instructions.
@@ -54,9 +44,12 @@ This assignment covers the following tasks:
    cd AME494598Fall2024/Assignments/A3
    node server.js
    ```
+   ![EC2 Instance Terminal Output](EC2_output.png)
 6. The ESP32 will automatically send temperature and humidity data to the EC2 server at regular intervals.
-    ![Serial Monitor output](esp32_output.png)
-   This is teh putput in the serial monitor showing successfull reading and sending of Temperature and Humidity data.
-8. Below is the screenshot of the output from the EC2 instance.
-    ![EC2 Terminal Output](ec2.png)
+    ![Serial Monitor output](EC2_output.png)
+   This is the output in the serial monitor showing successfull reading of Temperature and Humidity data.
+7. Output in the arduino serial monitor when it is successfully sending.
+  ![Arduino Output](arduino_output.png)
+8. Output on the internet.
+![](web.png)
 
