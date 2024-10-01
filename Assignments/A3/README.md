@@ -14,9 +14,8 @@ This assignment covers the following tasks:
     - GND on DHT11 to GND on ESP32.
     - DATA on DHT11 to pin 25 on ESP32.
 - **Code:**
-  - The provided code for the TTGO watch reads temperature and humidity values from the DHT11 sensor using the SimpleDHT11 library 
+  - The provided code for the TTGO watch reads temperature and humidity values from the DHT11 sensor using the SimpleDHT11 library.
   - The Arduino code is available in the repository: [sendData_TempHum.ino](https://github.com/VedantC2307/AME494598Fall2024/tree/main/Assignments/A3/sendData_TempHum/sendData_TempHum.ino).
-  - Upload and run the code.
   - The ESP32 code sends the sensor data over HTTP to the server hosted on the EC2 instance.
   
 ### 2. Configuring the EC2 Server to Receive Data
@@ -26,11 +25,12 @@ This assignment covers the following tasks:
   ![EC2 Instance](create_instance.png)
   4. Configure the EC2 security group inbound rule settings to allow incoming HTTP traffic on the required port.
   ![Security group](inbound_rules.png)
-  5. Install nodejs and other neccessary libraries
-  ```bash
-  sudo apt install update && sudo apt install upgrade
-  sudo apt install node
-  ```
+  5. Connect to the instance.
+  6. Install nodejs and other neccessary libraries for execution
+    ```bash
+    sudo apt install update && sudo apt install upgrade
+    sudo apt install node npm
+    ```
 
 ### 3. Run the Project
 1. Connect the DHT11 sensor to the ESP32 as per the wiring instructions.
@@ -39,17 +39,17 @@ This assignment covers the following tasks:
    ```bash
    git clone https://github.com/VedantC2307/AME494598Fall2024.git
    ```
-5. Run the HTTP server to listen for incoming data.
+4. Run the HTTP server to listen for incoming data.
    ```bash
    cd AME494598Fall2024/Assignments/A3
    node server.js
    ```
    ![EC2 Instance Terminal Output](EC2_output.png)
-6. The ESP32 will automatically send temperature and humidity data to the EC2 server at regular intervals.
+5. The ESP32 will automatically send temperature and humidity data to the EC2 server at regular intervals.
     ![Serial Monitor output](EC2_output.png)
    This is the output in the serial monitor showing successfull reading of Temperature and Humidity data.
-7. Output in the arduino serial monitor when it is successfully sending.
+6. Output in the arduino serial monitor when it is successfully sending.
   ![Arduino Output](arduino_output.png) 
-8. Output on the internet.
+7. Output on the internet.
 ![](web.png)
 
