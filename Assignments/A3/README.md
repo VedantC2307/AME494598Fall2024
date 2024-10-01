@@ -68,4 +68,4 @@ This assignment covers the following tasks:
 
 
 
-![Final Output](final_output.png) 
+![Final Output](final_output.jpg) 
