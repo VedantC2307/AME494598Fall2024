@@ -44,6 +44,8 @@ This assignment covers the following tasks:
    node server.js
    ```
 6. The ESP32 will automatically send temperature and humidity data to the EC2 server at regular intervals.
-7. Below is the screenshot of the output fro the EC2 instance.
-    ![Canvas](path/to/your/image.png)
+    ![Serial Monitor output](esp32_output.png)
+   This is teh putput in the serial monitor showing successfull reading and sending of Temperature and Humidity data.
+8. Below is the screenshot of the output from the EC2 instance.
+    ![EC2 Terminal Output](ec2.png)
 
