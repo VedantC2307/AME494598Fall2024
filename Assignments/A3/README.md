@@ -6,7 +6,7 @@ This assignment covers the following tasks:
 2. Sending the sensor data over HTTP to a server running on an AWS EC2 instance.
 3. Configuring the EC2 server to receive test data using an HTTP server.
 
-## Tasks Breakdown
+## Steps
 ### Connecting the DHT11 Sensor to the ESP32 and sending data over HTTP
 - **Hardware Setup:** 
   - Connect the DHT11 sensor to the ESP32 as follows:
