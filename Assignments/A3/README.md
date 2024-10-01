@@ -7,7 +7,7 @@ This assignment covers the following tasks:
 3. Configuring the EC2 server to receive test data using an HTTP server.
 
 ## Steps
-### Connecting the DHT11 Sensor to the ESP32 and sending data over HTTP
+### 1. Connecting the DHT11 Sensor to the ESP32(TTGO Watch) and sending data over HTTP
 - **Hardware Setup:** 
   - Connect the DHT11 sensor to the ESP32 as follows:
     - VCC (3.3V) on DHT11 to 3V3 on ESP32.
@@ -32,9 +32,9 @@ This assignment covers the following tasks:
   sudo apt install node
   ```
 
-## How to Run the Project
+### 3. Run the Project
 1. Connect the DHT11 sensor to the ESP32 as per the wiring instructions.
-2. Flash the `sendData_TempHum.ino` code to the ESP32.
+2. Flash the `sendData_TempHum.ino` code to the TTGO Watch.
 3. On the EC2 instance, clone the github repo.
    ```bash
    git clone https://github.com/VedantC2307/AME494598Fall2024.git
