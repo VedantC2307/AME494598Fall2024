@@ -49,7 +49,7 @@ This assignment covers the following tasks:
     ![Serial Monitor output](EC2_output.png)
    This is the output in the serial monitor showing successfull reading of Temperature and Humidity data.
 7. Output in the arduino serial monitor when it is successfully sending.
-  ![Arduino Output](arduino_output.png)
+  ![Arduino Output] <img src="./arduino_output.png" alt="Watch Image" height="500">
 8. Output on the internet.
 ![](web.png)
 
