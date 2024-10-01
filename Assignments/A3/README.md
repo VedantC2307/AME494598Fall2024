@@ -27,10 +27,10 @@ This assignment covers the following tasks:
   ![Security group](inbound_rules.png)
   5. Connect to the instance.
   6. Install nodejs and other neccessary libraries for execution
-    ```bash
-    sudo apt install update && sudo apt install upgrade
-    sudo apt install node npm
-    ```
+  ```bash
+  sudo apt install update && sudo apt install upgrade
+  sudo apt install node npm
+  ```
 
 ### 3. Run the Project
 1. Connect the DHT11 sensor to the ESP32 as per the wiring instructions.
@@ -44,7 +44,7 @@ This assignment covers the following tasks:
    cd AME494598Fall2024/Assignments/A3
    node server.js
    ```
-   ![EC2 Instance Terminal Output](EC2_output.png)
+   <!-- ![EC2 Instance Terminal Output](EC2_output.png) -->
 5. The ESP32 will automatically send temperature and humidity data to the EC2 server at regular intervals.
     ![Serial Monitor output](EC2_output.png)
    This is the output in the serial monitor showing successfull reading of Temperature and Humidity data.
