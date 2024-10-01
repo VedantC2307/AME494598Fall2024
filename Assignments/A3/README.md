@@ -23,9 +23,9 @@ This assignment covers the following tasks:
   1. Open the Sandbox Environment on Canvas.
   2. Start Lab and then click on the AWS button when it turns green.
   3. Create a new EC2 instace.
-  ![EC2 Instance](create_instance.png)
+  <img src="./create_instance.png" alt="Watch Image" height="500">
   4. Configure the EC2 security group inbound rule settings to allow incoming HTTP traffic on the required port.
-  ![Security group](inbound_rules.png)
+  <img src="./inbound_rules.png" alt="Watch Image" height="500">
   5. Install nodejs and other neccessary libraries
   ```bash
   sudo apt install update && sudo apt install upgrade
@@ -44,12 +44,12 @@ This assignment covers the following tasks:
    cd AME494598Fall2024/Assignments/A3
    node server.js
    ```
-   ![EC2 Instance Terminal Output](EC2_output.png)
+   <!-- <img src="./EC2_output.png" alt="Watch Image" height="500"> -->
 6. The ESP32 will automatically send temperature and humidity data to the EC2 server at regular intervals.
-    ![Serial Monitor output](EC2_output.png)
+  <img src="./EC2_output.png" alt="Watch Image" height="500">
    This is the output in the serial monitor showing successfull reading of Temperature and Humidity data.
 7. Output in the arduino serial monitor when it is successfully sending.
-  ![Arduino Output] <img src="./arduino_output.png" alt="Watch Image" height="500">
+  <img src="./arduino_output.png" alt="Watch Image" height="500">
 8. Output on the internet.
 ![](web.png)
 
