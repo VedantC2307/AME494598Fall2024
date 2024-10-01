@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
 <script src='asyncReq.js'></script>
@@ -18,5 +18,32 @@ function start()
 <body onload='start()'>
 <h1> Temperature/Humidity</h1>
 <div id='results'> </div>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html>
+<head>
+<script src='asyncReq.js'></script>
+<script>
+function updateData() {
+  loadURL("./getData", function(data) {
+    // Parse the JSON data
+    const parsedData = JSON.parse(data);
+
+    // Display the temperature and humidity values
+    document.getElementById("results").innerHTML = `Temperature: ${parsedData.t} °C, Humidity: ${parsedData.h} %`;
+  });
+}
+
+function start() {
+  setInterval(updateData, 300); // Pass the function reference instead of a string
+}
+</script>
+</head>
+<body onload='start()'>
+<h1> Temperature/Humidity</h1>
+<div id='results'></div>
 </body>
 </html>
