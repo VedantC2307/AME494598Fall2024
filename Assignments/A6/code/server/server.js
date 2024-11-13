@@ -35,22 +35,42 @@ app.get("/getAverage", function (req, res) {
   });
 });
 
-app.get("/getLatest", function (req, res) {
-  (async function() {
-    let client = await MongoClient.connect(connectionString,
-      { useNewUrlParser: true });
-    let db = client.db('sensorData');
-    var from = parseInt(req.query.from);
-    var to = parseInt(req.query.to);
-    try {
-      let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).limit(10).toArray();
-      res.send(JSON.stringify(result));
-    }
-    finally {
-      client.close();
-    }
-  })().catch(err => console.error(err));
+// app.get("/getLatest", function (req, res) {
+//   (async function() {
+//     let client = await MongoClient.connect(connectionString,
+//       { useNewUrlParser: true });
+//     let db = client.db('sensorData');
+//     var from = parseInt(req.query.from);
+//     var to = parseInt(req.query.to);
+//     try {
+//       let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).limit(10).toArray();
+//       res.send(JSON.stringify(result));
+//     }
+//     finally {
+//       client.close();
+//     }
+//   })().catch(err => console.error(err));
+// });
+
+app.get("/getLatest", async function (req, res) {
+  let duration = parseInt(req.query.duration) || 10; // Default to 10 minutes if not specified
+  const now = Date.now();
+  const from = now - duration * 60000; // Calculate the start time based on duration (in minutes)
+
+  try {
+    const client = await MongoClient.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
+    const db = client.db("sensorData");
+    const result = await db.collection("data")
+      .find({ time: { $gte: from, $lte: now } })
+      .sort({ time: -1 })
+      .toArray();
+    res.json(result); // Send the result as JSON
+  } catch (err) {
+    console.error("Error fetching latest data:", err);
+    res.status(500).send("Error fetching latest data");
+  }
 });
+
 
 app.get("/getData", function (req, res) {
   var from = parseInt(req.query.from);
