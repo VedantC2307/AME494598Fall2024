@@ -41,7 +41,7 @@ app.get("/getLatest", function (req, res) {
       { useNewUrlParser: true });
     let db = client.db('sensorData');
     try {
-      let result = await db.collection("data").find().sort({time:-1}).limit(10).toArray();
+      let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).limit(10).toArray();
       res.send(JSON.stringify(result));
     }
     finally {
