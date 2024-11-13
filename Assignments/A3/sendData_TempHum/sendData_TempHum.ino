@@ -8,11 +8,14 @@ TTGOClass *ttgo;
 #include <HTTPClient.h>
 
 
-const char* ssid = "SETUP-A039";
-const char* password = "brook2845filter";
+const char* ssid = "LGMesaroof";
+const char* password = "12345678";
+
+// const char* ssid = "Vedant Phone";
+// const char* password = "12345678";
 
 //Your Domain name with URL path or IP address with path
-const char* serverName = "http://54.208.4.23:8080/sendData";
+const char* serverName = "http://23.22.175.172:5001/setValue";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -81,6 +84,8 @@ void setup() {
  
   Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
 
+
+
 }
 
 void loop() {
@@ -88,6 +93,7 @@ void loop() {
   Serial.println("=================================");
   Serial.println("Sample DHT11...");
  
+
   // read without samples.
   byte temperature = 0;
   byte humidity = 0;
@@ -111,6 +117,8 @@ void loop() {
       response = httpGETRequest(url.c_str());
       Serial.println(response);
 
+
+
   // DHT11 sampling rate is 1HZ.
-  delay(6500);
+  delay(5000);
 }
