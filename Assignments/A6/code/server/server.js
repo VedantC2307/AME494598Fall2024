@@ -69,6 +69,7 @@ app.get("/getLatest", async function (req, res) {
     console.error("Error fetching latest data:", err);
     res.status(500).send("Error fetching latest data");
   }
+  
 });
 
 
