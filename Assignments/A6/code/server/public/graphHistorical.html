@@ -37,10 +37,11 @@ function getDataFromServer()
 				lastAddedTS = timestamp;
 			}
 		}
-
+		if (columns[0].length > 1) {
 		chart.flow({
   		columns: columns
 		});
+		}
 	}
 	loadFile(url, callback);
 }
