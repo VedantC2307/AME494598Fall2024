@@ -43,6 +43,7 @@ app.get("/getLatest", function (req, res) {
 
     var from = parseInt(req.query.from);
     var to = parseInt(req.query.to);
+    console.log(`Query received with from: ${new Date(from)} and to: ${new Date(to)}`);
     try {
       let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).limit(10).toArray();
       res.send(JSON.stringify(result));
