@@ -35,22 +35,6 @@ app.get("/getAverage", function (req, res) {
   });
 });
 
-// app.get("/getLatest", function (req, res) {
-//   (async function() {
-//     let client = await MongoClient.connect(connectionString,
-//       { useNewUrlParser: true });
-//     let db = client.db('sensorData');
-//     var from = parseInt(req.query.from);
-//     var to = parseInt(req.query.to);
-//     try {
-//       let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).limit(10).toArray();
-//       res.send(JSON.stringify(result));
-//     }
-//     finally {
-//       client.close();
-//     }
-//   })().catch(err => console.error(err));
-// });
 
 app.get("/getLatest", function (req, res) {
   (async function() {
@@ -58,7 +42,7 @@ app.get("/getLatest", function (req, res) {
       { useNewUrlParser: true });
     let db = client.db('sensorData');
     try {
-      let result = await db.collection("data").find().sort({time:-1}).limit(10).toArray();
+      let result = await db.collection("data").find().sort({time:{$gte: from, $lte: to}}).limit(10).toArray();
       res.send(JSON.stringify(result));
     }
     finally {
