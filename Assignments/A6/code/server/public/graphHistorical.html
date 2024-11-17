@@ -13,7 +13,17 @@ var lastAddedTS = 0;
 
 function getDataFromServer()
 {
-	var url = "./getLatest"
+	// Get the selected duration from the dropdown
+    var duration = parseInt(document.getElementById("duration").value); // In minutes
+
+    // Calculate 'from' and 'to' timestamps
+    var to = new Date().getTime(); // Current timestamp in milliseconds
+    var from = to - duration * 60 * 1000; // Subtract duration (in ms) from current time
+
+    // Construct the URL with query parameters
+    var url = `./getLatest?from=${from}&to=${to}`;
+
+	// var url = "./getLatest"
 	var callback = function(data){
 		var obj = JSON.parse(data);
 		var columns = [["x"],["Temperature"],["Humidity"]]
