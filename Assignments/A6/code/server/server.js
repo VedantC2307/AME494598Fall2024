@@ -59,7 +59,7 @@ app.get("/getData", function (req, res) {
   var to = parseInt(req.query.to);
   try {
     // get values from database, where time is between from and to abd return it as JSON
-    let data = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time: -1}).toArray();
+    let data = db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time: -1}).toArray();
     res.send(JSON.stringify(data));
   }
   finally{
