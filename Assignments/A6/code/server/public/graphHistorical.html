@@ -21,7 +21,7 @@ function getDataFromServer()
     var from = to - duration * 60 * 1000; // Subtract duration (in ms) from current time
 
     // Construct the URL with query parameters
-    var url = `./getLatest?from=${from}&to=${to}`;
+    var url = `./getData?from=${from}&to=${to}`;
 
 	// var url = "./getLatest"
 	var callback = function(data){
