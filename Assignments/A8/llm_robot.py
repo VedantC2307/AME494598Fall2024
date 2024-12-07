@@ -12,7 +12,7 @@ import numpy as np
 last_saved_frame = None      
 WS_URL = 'wss://192.168.0.133:4000'
 
-client = OpenAI(api_key = "")
+client = OpenAI(api_key = "YOUR_API_KEY")
 
 def get_distance_to_object():
     return 5.0
