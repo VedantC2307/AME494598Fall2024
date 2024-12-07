@@ -45,7 +45,7 @@ app.get("/getLatest", function (req, res) {
     var to = parseInt(req.query.to);
     console.log(`Query received with from: ${new Date(from)} and to: ${new Date(to)}`);
     try {
-      let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).limit(10).toArray();
+      let result = await db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time:-1}).toArray();
       res.send(JSON.stringify(result));
     }
     finally {
@@ -57,9 +57,14 @@ app.get("/getLatest", function (req, res) {
 app.get("/getData", function (req, res) {
   var from = parseInt(req.query.from);
   var to = parseInt(req.query.to);
- // get values from database, where time is between from and to abd return it as JSON
- const data = db.collection("data").find({ time: { $gte: from, $lte: to } }).toArray();
- res.send(JSON.stringify(data))
+  try {
+    // get values from database, where time is between from and to abd return it as JSON
+    let data = db.collection("data").find({ time: { $gte: from, $lte: to } }).sort({time: -1}).toArray();
+    res.send(JSON.stringify(data));
+  }
+  finally{
+    client.close();
+  }
 });
 
 
